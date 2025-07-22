@@ -9,15 +9,17 @@ int main(){
       break;
     }
   }
-  int k = 2;
+  
+  double k = 2;
   for (int i = 0; i < 10; i++){
     if (numeros[i]==0){
       std::cout << "No se puede dividir entre 0" << std::endl;
     }else{
-      float valor = numeros[i] / k;
+      double valor = numeros[i] / k;
       std::cout << "El valor de la división es: " << valor << std::endl;
     }
   }
+  
   int matriz[][3] = {{1, 2, 3}, {4, 0, 6}, {7, 0, 9}};
   int contador = 0;
   for (int i = 0; i < 3; i++){
