@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void insertar(int arreglo[], int n, int valor, int posicion){
+void insertar(int arreglo[], int &n, int valor, int posicion){
   for (int i = n; i > posicion; i--){
     arreglo[i] = arreglo[i-1];
   }
@@ -13,7 +13,7 @@ int main(){
   int posicion = 2;
   int n = 5;
   insertar(arreglo, n, valor, posicion);
-  for (int i = 0; i < 6; i++){
+  for (int i = 0; i < n; i++){
     cout << arreglo[i] << endl;
   }
   return 0;
