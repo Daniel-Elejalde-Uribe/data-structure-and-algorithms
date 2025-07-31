@@ -3,7 +3,8 @@
 
 using namespace std;
 
-struct Punto{
+class Punto{
+public:
   int x;
   int y;
 
