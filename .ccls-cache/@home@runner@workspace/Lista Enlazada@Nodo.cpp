@@ -49,5 +49,9 @@ int main(){
 
   cout << "5. Liberar Memoria" << endl;
   delete nodo0;
-  delete nodo1; 
+  delete nodo1;
+  nodo0 = nullptr;
+  nodo1 = nullptr;
+
+  return 0;
 }
