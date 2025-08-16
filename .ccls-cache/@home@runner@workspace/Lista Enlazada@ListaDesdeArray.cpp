@@ -66,7 +66,45 @@ void imprimirLista(Node* nodo0) {
     //cout << " -> nullptr" << endl;
 }
 
+void tamañoLista(Node* nodo0){
+    Node* current = nodo0;
+    // Contador del numero de ciclos
+    int T = 0;
+    cout << "Tamaño de la lista: " << endl;
+    while (current != nullptr){
+        T++;
+        current=current->next;
+    }
+    cout << T << endl;
+}
 
+// Liberar lista
+void LiberarLista(Node* nodo0){
+    Node* current = nodo0;
+    while (current != nullptr){
+        Node* currentNext = current->next;
+        delete current;
+        current = currentNext;
+    }
+    cout<<"Lista Liberada"<<endl;
+}
+
+void buscarDato (Node* nodo0, int valor){
+    bool estaValor = false;
+    Node* current = nodo0;
+    int i = 0;
+    while(current != nullptr){
+        if(current->data == valor){
+            cout << "El valor está en la posición: "<< i << endl;
+            estaValor = true;
+        }
+        current = current->next;
+        i++;
+    }
+    if(estaValor == false){
+        cout<<"No se encontró el valor"<<endl;
+    }
+}
 
 // --- Función principal (main) ---
 int main() {
@@ -82,6 +120,17 @@ int main() {
 
     // Imprime la lista para verificar
     imprimirLista(miLista);
+
+    // Arroja el tamaño de la lista
+    tamañoLista(miLista);
+
+    // Busca la posición de un valor en la lista
+    buscarDato(miLista, 31);
+    buscarDato(miLista, 40);
+
+    //Libera la lista
+    LiberarLista(miLista);
+    
 
     return 0;
 }
