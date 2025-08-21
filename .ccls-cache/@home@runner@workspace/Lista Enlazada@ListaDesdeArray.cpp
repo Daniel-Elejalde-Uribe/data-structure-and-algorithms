@@ -89,7 +89,7 @@ void LiberarLista(Node *nodo0) {
   cout << "Lista Liberada" << endl;
 }
 
-void buscarDato(Node *nodo0, int valor) {
+void buscarValor(Node *nodo0, int valor) {
   bool estaValor = false;
   Node *current = nodo0;
   int i = 0;
@@ -105,10 +105,10 @@ void buscarDato(Node *nodo0, int valor) {
     cout << "No se encontró el valor" << endl;
   }
 }
-void buscarPosicion(Node *nodo0, int posicion) {
+void buscarIndice(Node *nodo0, int posicion) {
   Node *current = nodo0;
   int i = 0;
-  while (current != nullptr && i< posicion) {
+  while (current != nullptr && i < posicion) {
     current = current->next;
     i++;
   }
@@ -175,19 +175,31 @@ int main() {
   tamañoLista(miLista);
 
   // Busca la posición de un valor en la lista
-  buscarDato(miLista, 31);
-  buscarDato(miLista, 40);
+  buscarValor(miLista, 31);
+  buscarValor(miLista, 40);
 
   //Buscar valor por posición
-  buscarPosicion(miLista, 2);
+  buscarIndice(miLista, 2);
 
   // Insertamos Nodo e imprimimos la lista
-  insertarNodoLista(miLista, 2, 28);
-  imprimirLista(miLista);
-
-  // Insertar elemento al inicio
+  //En el inicio
   Node *nuevoNodo = insertarNodoLista(miLista, 0, 50);
   imprimirLista(nuevoNodo);
+  //En el intermedio
+  miLista = nuevoNodo;
+  insertarNodoLista(miLista, 2, 28);
+  imprimirLista(miLista);
+  //En el final
+  insertarNodoLista(miLista, 7, 78);
+  imprimirLista(miLista);
+
+  // Eliminar Nodo
+  //En el inicio
+  eliminarNodoLista(miLista, 0);
+  //En el intermedio
+  eliminarNodoLista(miLista, 3);
+  //En el final
+  eliminarNodoLista(miLista, 5);
 
   // Libera la lista
   LiberarLista(miLista);
