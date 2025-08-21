@@ -112,8 +112,8 @@ void buscarIndice(Node *nodo0, int posicion) {
     current = current->next;
     i++;
   }
-    cout<<"En la posicion "<<posicion<<" el valor es "<<current->data<<endl;
-  
+  cout << "En la posicion " << posicion << " el valor es " << current->data
+       << endl;
 }
 
 Node *insertarNodoLista(Node *nodo0, int posicion, int valor) {
@@ -136,23 +136,24 @@ Node *insertarNodoLista(Node *nodo0, int posicion, int valor) {
   }
 }
 
-Node* eliminarNodoLista(Node* nodo0, int posicion){
-    if(posicion==0){
-        Node* borrar = nodo0;
-        nodo0 = nodo0->next;
-        delete borrar;
-        return nodo0;
-    }
+Node *eliminarNodoLista(Node *nodo0, int posicion) {
+  if (posicion == 0) {
+    Node *borrar = nodo0;
+    nodo0 = nodo0->next;
+    delete borrar;
+    return nodo0;
+  } else {
     Node *current = nodo0;
     int i = 0;
-    while(current != nullptr && i < posicion - 1){
-        current = current->next;
-        i++;
+    while (current != nullptr && i < posicion - 1) {
+      current = current->next;
+      i++;
     }
     Node *borrar = current->next;
     current->next = borrar->next;
     delete borrar;
     return nodo0;
+  }
 }
 
 // --- Función principal (main) ---
@@ -178,28 +179,31 @@ int main() {
   buscarValor(miLista, 31);
   buscarValor(miLista, 40);
 
-  //Buscar valor por posición
+  // Buscar valor por posición
   buscarIndice(miLista, 2);
 
   // Insertamos Nodo e imprimimos la lista
-  //En el inicio
+  // En el inicio
   Node *nuevoNodo = insertarNodoLista(miLista, 0, 50);
   imprimirLista(nuevoNodo);
-  //En el intermedio
+  // En el intermedio
   miLista = nuevoNodo;
   insertarNodoLista(miLista, 2, 28);
   imprimirLista(miLista);
-  //En el final
+  // En el final
   insertarNodoLista(miLista, 7, 78);
   imprimirLista(miLista);
 
   // Eliminar Nodo
-  //En el inicio
-  eliminarNodoLista(miLista, 0);
-  //En el intermedio
+  // En el inicio
+  miLista = eliminarNodoLista(miLista, 0);
+  imprimirLista(miLista);
+  // En el intermedio
   eliminarNodoLista(miLista, 3);
-  //En el final
+  imprimirLista(miLista);
+  // En el final
   eliminarNodoLista(miLista, 5);
+  imprimirLista(miLista);
 
   // Libera la lista
   LiberarLista(miLista);
