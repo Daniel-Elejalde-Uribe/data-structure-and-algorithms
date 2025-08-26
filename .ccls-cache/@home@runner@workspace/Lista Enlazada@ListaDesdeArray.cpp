@@ -1,3 +1,6 @@
+// Bonificación de:
+// Daniel Elejalde Uribe
+// Tomás Gallón Ramírez
 #include <cstddef>  // Para nullptr
 #include <iostream> // Para usar std::cout
 #include <vector>   // Para usar std::vector (más flexible que un array fijo)
@@ -59,7 +62,7 @@ Node *crearListaDesdeArray(vector<int> arr) {
 // --- Función para recorrer los elementos de la lista enlazada ---
 void imprimirLista(Node *nodo0) {
   Node *current = nodo0;
-  cout << "Elementos de la lista enlazada: ";
+  cout << "Elementos de la lista enlazada: " << endl;
   while (current != nullptr) {
     cout << current->data << endl;
     current = current->next;
@@ -196,6 +199,7 @@ int main() {
 
   // Eliminar Nodo
   // En el inicio
+  cout<<"Eliminar Nodos:"<<endl;
   miLista = eliminarNodoLista(miLista, 0);
   imprimirLista(miLista);
   // En el intermedio
@@ -207,6 +211,5 @@ int main() {
 
   // Libera la lista
   LiberarLista(miLista);
-
   return 0;
 }

@@ -27,7 +27,7 @@ struct Stack {
     Node *newNode = new Node(val);
     newNode->next = top;
     top = newNode;
-    cout << val << "Agregado a la lista";
+    cout << val << " Agregado a la lista" << endl;
   }
 
   void pop() {
@@ -39,6 +39,15 @@ struct Stack {
     top = top->next;
     cout << temp->data << " eliminado de la lista" << endl;
     delete temp;
+  }
+
+  int peek(){
+    if(isEmpty()){
+      cout << "La pila esta vacia no hay elementos para ver" <<endl;
+      return -1;
+    }else{
+      return top->data;
+    }
   }
 
   bool isEmpty(){
@@ -63,9 +72,12 @@ int main() {
   Stack myStack;
   myStack.push(10);
   myStack.push(20);
+  myStack.push(30);
 
   myStack.display();
-
+  myStack.pop();
+  cout<<"Ultimo elemento de la lista: " << myStack.peek() << endl;
+  
   
   myStack.pop();
   myStack.pop();
