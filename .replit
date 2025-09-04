@@ -67,3 +67,6 @@ pattern = "**/*.{cpp,h}"
 
 [languages.cpp.languageServer]
 start = "ccls"
+
+[agent]
+expertMode = true
