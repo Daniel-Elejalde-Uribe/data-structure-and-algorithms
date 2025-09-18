@@ -19,10 +19,10 @@ std::vector<std::vector<int>> multiplicar_matrices(
     int filas2 = matriz2.size();
     int columnas2 = matriz2[0].size();
 
-    // Crear la matriz resultado con el tamaÃ±o correcto (filas1 x columnas2)
+    // Crear la matriz resultado con el tamaño correcto (filas1 x columnas2)
     std::vector<std::vector<int>> resultado(filas1, std::vector<int>(columnas2, 0));
 
-    // Realizar la multiplicaciÃ³n
+    // Realizar la multiplicación
     for (int i = 0; i < filas1; ++i) {
         for (int j = 0; j < columnas2; ++j) {
             for (int k = 0; k < columnas1; ++k) {
