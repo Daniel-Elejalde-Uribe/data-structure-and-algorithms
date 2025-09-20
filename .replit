@@ -3,6 +3,7 @@ compile = "make -s"
 run = "./main"
 entrypoint = "main.cpp"
 hidden = ["main", "**/*.o", "**/*.d", ".ccls-cache", "Makefile"]
+modules = ["cpp-clang"]
 
 [nix]
 channel = "stable-24_05"
@@ -70,3 +71,26 @@ start = "ccls"
 
 [agent]
 expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Compile C++"
+
+[[workflows.workflow]]
+name = "Compile C++"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "g++ -o NacionalArgentina/Tejo NacionalArgentina/Tejo.cpp && g++ -o NacionalArgentina/Black NacionalArgentina/Black.cpp && echo \"Compilation successful!\""
+
+[workflows.workflow.metadata]
+outputType = "console"
