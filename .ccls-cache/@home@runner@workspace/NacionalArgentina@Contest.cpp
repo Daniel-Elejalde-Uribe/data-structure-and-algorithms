@@ -14,13 +14,19 @@ int main() {
   for (int i = 0; i < niveles; ++i) {
     cin >> numeroProblemas2[i];
   }
-  int i=0;
   int division = 1;
-  while(division!=0){
-    int resto=numeroProblemas2[i]-((i+1)*numeroProblemas1[i]);
-    for(int j=0;j<niveles;++j
-    ++i;
+  int resto = 0;
+  for(int i=0;division>0;++i){
+    
+    for(int j=0;j<niveles;++j){
+      numeroProblemas2[j]+=resto;
+      int resto=numeroProblemas2[j]-((i+1)*numeroProblemas1[j]);
+    }
+    division=numeroProblemas2[niveles-1]/numeroProblemas1[niveles-1];
+    cout<<division<<endl;
+    int resultado=i-1;
   }
-
+  cout<<resultado;
+  
       return 0;
 }
