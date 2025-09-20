@@ -88,9 +88,9 @@ args = "Compile C++"
 name = "Compile C++"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "g++ -o NacionalArgentina/Tejo NacionalArgentina/Tejo.cpp && g++ -o NacionalArgentina/Black NacionalArgentina/Black.cpp && echo \"Compilation successful!\""
-
 [workflows.workflow.metadata]
 outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "g++ -o NacionalArgentina/Tejo NacionalArgentina/Tejo.cpp && g++ -o NacionalArgentina/Black NacionalArgentina/Black.cpp && g++ -o NacionalArgentina/Contest NacionalArgentina/Contest.cpp && echo \"Compilation successful!\""
