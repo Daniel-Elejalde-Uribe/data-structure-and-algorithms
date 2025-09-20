@@ -7,20 +7,20 @@ int main(){
     cin >> numViajes;
     cin >> numOficinas;
 
-    int numAlfajores[numViajes];
-    int numEmpleados[numOficinas];
+    short numAlfajores[numViajes];
+    short numEmpleados[numOficinas];
     for (int i = 0; i<numViajes; ++i){
         cin >> numAlfajores[i];
     }
 
-    for (int j = 0; j<numOficinas; ++j){
+    for (short j = 0; j<numOficinas; ++j){
         cin >> numEmpleados[j];
     }
     int k = 0; 
-    for (int k = 0; k<numViajes; ++k){
-        for (int l = 0; l<numOficinas; ++l){
+    for (short k = 0; k<numViajes; ++k){
+        for (short l = 0; l<numOficinas; ++l){
             if(numEmpleados[l]<=numAlfajores[k]){
-                int division = numAlfajores[k]/numEmpleados[l];
+                short division = numAlfajores[k]/numEmpleados[l];
                 numAlfajores[k] = numAlfajores[k]-(numEmpleados[l]*division);
             }
         }

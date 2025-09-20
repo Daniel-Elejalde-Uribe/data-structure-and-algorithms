@@ -11,8 +11,8 @@ int main() {
   vector<int> yAzul(tiradas);
   vector<int> xRojo(tiradas);
   vector<int> yRojo(tiradas);
-  vector<float> distAzul(tiradas);
-  vector<float> distRojo(tiradas);
+  vector<double> distAzul(tiradas);
+  vector<double> distRojo(tiradas);
   cin >> dim_x >> dim_y >> T_x >> T_y;
   for (int i = 0; i < tiradas; ++i) {
     cin >> xAzul[i] >> yAzul[i];
@@ -24,8 +24,8 @@ int main() {
     distAzul[i] = sqrt(pow(xAzul[i] - T_x, 2) + pow(yAzul[i] - T_y, 2));
     distRojo[i] = sqrt(pow(xRojo[i] - T_x, 2) + pow(yRojo[i] - T_y, 2));
   }
-  float minimoAzul = *min_element(distAzul.begin(), distAzul.end());
-  float minimoRojo = *min_element(distRojo.begin(), distRojo.end());
+  double minimoAzul = *min_element(distAzul.begin(), distAzul.end());
+  double minimoRojo = *min_element(distRojo.begin(), distRojo.end());
   int contador = 0;
   if (minimoAzul < minimoRojo) {
     cout << "A" << endl;
