@@ -24,6 +24,7 @@ vector<int> distAzul(tiradas);
         distAzul[i] = sqrt(pow(xAzul[i]-T_x, 2)+pow(yAzul[i]-T_y, 2));
         distRojo[i] = sqrt(pow(xRojo[i]-T_x, 2)+pow(yRojo[i]-T_y, 2));
       }
-    int minimoAzul =min_element(distAzul.begin(), distAzul.end());
+    int minimoAzul = *min_element(distAzul.begin(), distAzul.end());
+    int minimoRojo = *min_element(distRojo.begin(), distRojo.end());
   return 0;
 }
