@@ -18,6 +18,7 @@ int main() {
   int division = 1;
   while(division!=0){
     int resto=numeroProblemas2[i]-((i+1)*numeroProblemas1[i]);
+    for(int j=0;j<niveles;++j)
     ++i;
   }
 

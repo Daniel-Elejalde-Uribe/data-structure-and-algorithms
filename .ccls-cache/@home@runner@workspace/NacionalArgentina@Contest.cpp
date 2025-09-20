@@ -6,8 +6,8 @@ int main() {
   cin.tie(NULL);
   int niveles;
     cin >> niveles;
-  vector<string> numeroProblemas1(niveles);
-  vector<string> numeroProblemas2(niveles);
+  vector<int> numeroProblemas1(niveles);
+  vector<int> numeroProblemas2(niveles);
   for (int i = 0; i < niveles; ++i) {
     cin >> numeroProblemas1[i];
   }
@@ -18,6 +18,7 @@ int main() {
   int division = 1;
   while(division!=0){
     int resto=numeroProblemas2[i]-((i+1)*numeroProblemas1[i]);
+    for(int j=0;j<niveles;++j
     ++i;
   }
 
