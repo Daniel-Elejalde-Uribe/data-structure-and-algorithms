@@ -45,16 +45,15 @@ int main() {
           if (i < j && j < k) {
             vector<int> numerosPosibles = {0, 1, 2, 3, 4, 5};
             forn(l, 5) {
-              if (numerosPosibles[l] == i || numerosPosibles[l] == j ||
-                  numerosPosibles[l] == k) {
+              if (numerosPosibles[l] == i || numerosPosibles[l] == j ||numerosPosibles[l] == k) {
                 numerosPosibles.erase(numerosPosibles.begin() + l);
               }
             }
-            if ((puntaje[i] + puntaje[j] + puntaje[k]) ==
-                (puntaje[numerosPosibles[0]] + puntaje[numerosPosibles[1]] +
-                 puntaje[numerosPosibles[2]])) {
-              posible = true;
-            }
+          }
+          if ((puntaje[i] + puntaje[j] + puntaje[k]) ==
+              (puntaje[numerosPosibles[0]] + puntaje[numerosPosibles[1]] +
+               puntaje[numerosPosibles[2]])) {
+            posible = true;
           }
         }
       }
