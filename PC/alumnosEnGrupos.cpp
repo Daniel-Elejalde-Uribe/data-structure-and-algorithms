@@ -43,8 +43,7 @@ int main() {
       forn(k, 6) {
         vector<int> numerosPosibles = {1, 2, 3, 4, 5, 6};
         forn(l, 6) {
-          if (numerosPosibles[l] == i || numerosPosibles[l] == j ||
-              numerosPosibles[l] == k) {
+          if (numerosPosibles[l] == i || numerosPosibles[l] == j || numerosPosibles[l] == k) {
             numerosPosibles.erase(numerosPosibles.begin() + l);
           }
         }
