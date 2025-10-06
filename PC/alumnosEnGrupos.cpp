@@ -36,18 +36,23 @@ int main() {
   bool Carl = false;
   bool posible = true;
   vector<int> puntaje(6);
-  
+
   forn(i, 6) { cin >> puntaje[i]; }
   forn(i, 6) {
     forn(j, 6) {
       forn(k, 6) {
-        vector<int> numerosPosibles = {1,2,3,4,5,6};
-        forn(l, 6){
-          if(numerosPosibles[l]==i||numerosPosibles[l]==j||numerosPosibles[l]==k){
+        vector<int> numerosPosibles = {1, 2, 3, 4, 5, 6};
+        forn(l, 6) {
+          if (numerosPosibles[l] == i || numerosPosibles[l] == j ||
+              numerosPosibles[l] == k) {
             numerosPosibles.erase(numerosPosibles.begin() + l);
           }
         }
-        if((i+j+k)==
+        forn(m, 3) {
+          if((puntaje[i]+puntaje[j]+puntaje[k])==puntaje[numerosPosibles[m]]){
+            
+          }
+        }
       }
     }
   }
