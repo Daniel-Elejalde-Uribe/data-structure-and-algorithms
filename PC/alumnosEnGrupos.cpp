@@ -35,20 +35,20 @@ int main() {
   bool posible = false;
   vector<int> puntaje(6);
 
-  forn(i, 6) { cin >> puntaje[i]; }
-  forn(i, 3) {
+  for (int i = 0; i < 6; ++i) {
+    cin >> puntaje[i];
+  }
+  for (int i = 0; i < 6; ++i) {
 
-    for1(j, 4) {
-      if (i < j) {
+    for (int j = i + 1; j < 6; ++j) {
 
-        for2(k, 5) {
-          if (i < j && j < k) {
-            vector<int> numerosPosibles = {0, 1, 2, 3, 4, 5};
-            forn(l, 5) {
-              if (numerosPosibles[l] == i || numerosPosibles[l] == j ||numerosPosibles[l] == k) {
-                numerosPosibles.erase(numerosPosibles.begin() + l);
-              }
-            }
+      for (int k = j + 1; k < 6; ++k) {
+
+        vector<int> numerosPosibles = {0, 1, 2, 3, 4, 5};
+        forn(l, 5) {
+          if (numerosPosibles[l] == i || numerosPosibles[l] == j ||
+              numerosPosibles[l] == k) {
+            numerosPosibles.erase(numerosPosibles.begin() + l);
           }
           if ((puntaje[i] + puntaje[j] + puntaje[k]) ==
               (puntaje[numerosPosibles[0]] + puntaje[numerosPosibles[1]] +
